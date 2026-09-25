@@ -1,29 +1,29 @@
+
 # IntelliJ IDEA
 .idea/
+*.iws
 *.iml
-out/
+*.ipr
 
-# Java and Maven
+# Maven / Java
 target/
-.mvn/wrapper/maven-wrapper.jar
+*.class
+*.jar
+*.war
 
-# Node and Vite
+# Node / React / Frontend
 node_modules/
 dist/
-.vite/
-*.tsbuildinfo
+build/
+.npm/
 
-# Environment files and secrets
+# Environment and Secrets
 .env
-.env.*
-!.env.example
+.env.local
+secrets.yml
+*.pem
+*.key
 
-# Operating system files
+# OS Generated
 .DS_Store
 Thumbs.db
-
-# Logs
-*.log
-
-# Test coverage
-coverage/
