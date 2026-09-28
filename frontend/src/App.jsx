@@ -1,2 +1,31 @@
-import {Navigate,Route,Routes} from "react-router-dom";import ProtectedRoute from "./components/ProtectedRoute.jsx";import AppShell from "./components/AppShell.jsx";import Login from "./pages/Login.jsx";import Register from "./pages/Register.jsx";import Dashboard from "./pages/Dashboard.jsx";import Candidates from "./pages/Candidates.jsx";import Jobs from "./pages/Jobs.jsx";import NotFound from "./pages/NotFound.jsx";
-export default function App(){return <Routes><Route path="/login" element={<Login/>}/><Route path="/register" element={<Register/>}/><Route element={<ProtectedRoute/>}><Route element={<AppShell/>}><Route path="/dashboard" element={<Dashboard/>}/><Route path="/candidates" element={<Candidates/>}/><Route path="/jobs" element={<Jobs/>}/></Route></Route><Route path="/" element={<Navigate to="/dashboard" replace/>}/><Route path="*" element={<NotFound/>}/></Routes>;}
+import { Navigate, Route, Routes } from "react-router-dom";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import AppShell from "./components/AppShell.jsx";
+import Login from "./pages/Login.jsx";
+import Register from "./pages/Register.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
+import Candidates from "./pages/Candidates.jsx";
+import Jobs from "./pages/Jobs.jsx";
+import Report from "./pages/Report.jsx";
+import NotFound from "./pages/NotFound.jsx";
+
+export default function App() {
+    return (
+        <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+
+            <Route element={<ProtectedRoute />}>
+                <Route element={<AppShell />}>
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/candidates" element={<Candidates />} />
+                    <Route path="/jobs" element={<Jobs />} />
+                    <Route path="/reports/candidate-pipeline" element={<Report />} />
+                </Route>
+            </Route>
+
+            <Route path="/" element={<Navigate to="/dashboard" replace />} />
+            <Route path="*" element={<NotFound />} />
+        </Routes>
+    );
+}
